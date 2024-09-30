@@ -13,10 +13,9 @@ public class Parser {
     private static final String USER_AGENT = "FoxyCue/0.0.1";
     private static final String DISCOGS_API_URL = "https://api.discogs.com/releases/";
 
-    public static void parse() {
+    public static Release parse(String releaseId) {
+        Release release = new Release();
         try {
-            // Replace with your Discogs release ID and API token
-            String releaseId = "30519733";  // Extracted from the release link
 
             // Send the GET request to the Discogs API
             String jsonResponse = sendGET(releaseId);
@@ -24,9 +23,8 @@ public class Parser {
             System.out.printf(jsonResponse);
             // Parse the JSON response into Java objects using Gson
             Gson gson = new Gson();
-            Release release = gson.fromJson(jsonResponse, Release.class);
+            release = gson.fromJson(jsonResponse, Release.class);
 
-            // Now you can easily access the parts of the response
             System.out.println("Release Title: " + release.getTitle());
             System.out.println("Year: " + release.getYear());
 
@@ -37,11 +35,16 @@ public class Parser {
 
             // Print tracklist
             for (Track track : release.getTracklist()) {
-                System.out.println("Track " + track.getType() + " " + track.getPosition() + ": " + track.getTitle());
+                System.out.println(track.getType() + " " + track.getPosition() + ": " + track.getTitle());
             }
+            for (String genre: release.getGenres())
+                System.out.println(genre);
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        finally {
+            return release;
         }
     }
 

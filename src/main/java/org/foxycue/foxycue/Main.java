@@ -22,7 +22,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
-        parse();
+        //launch();
+        Release parsed_release = parse(String.valueOf(3203984));
+        CueSheetBase cueFromParsed = IO.parsedToCueSheetBase(parsed_release);
+        CueGenerator.generateCueFromBase(cueFromParsed);
     }
 }
