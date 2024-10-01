@@ -1,5 +1,4 @@
 package org.foxycue.foxycue;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,6 +6,7 @@ import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import org.foxycue.foxycue.IO;
 
 import CueSheetCore.*;
 import com.google.gson.Gson;
@@ -25,6 +25,7 @@ public class Parser {
         } catch (SocketTimeoutException e) {
             //throw custom exception!
             System.out.println("socket timed out!");
+            return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -67,7 +68,7 @@ public class Parser {
             return null;
         }
         StringBuilder response = new StringBuilder();
-        try(BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))){
+        try(BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))){
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);

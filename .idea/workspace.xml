@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="add packages">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="link GUI and generator, make input sanitizers, add textfields and buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/Track.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/foxycue/foxycue/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/foxycue/foxycue/MainView.fxml" afterDir="false" />
     </list>
@@ -28,9 +22,43 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="foxycue" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="foxycue" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "r3dfx080"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/r3dfx080/FoxyCue.git",
+    "accountId": "e6ade768-0e48-47f6-92be-44e85625a8d3"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 1
 }]]></component>
@@ -48,16 +76,17 @@
     "Gradle.FoxyCue [:HelloApplication.main()].executor": "Run",
     "Gradle.FoxyCue [:Main.main()].executor": "Run",
     "Gradle.FoxyCue.executor": "Run",
-    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.Annotations": "true",
     "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/SSAU/JAVA/Lab8",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.4425023"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4425023",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -111,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727728302705</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="link GUI and generator, make input sanitizers, add textfields and buttons">
+      <option name="closed" value="true" />
+      <created>1727806981642</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727806981642</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +178,8 @@
     <MESSAGE value="make parser and generator core (UI unlinked)" />
     <MESSAGE value="link parser with cue generator&#10;make method to interpret parsed release into cue sheet base" />
     <MESSAGE value="add packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="add packages" />
+    <MESSAGE value="link GUI and generator, make input sanitizers, add textfields and buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="link GUI and generator, make input sanitizers, add textfields and buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -150,6 +188,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

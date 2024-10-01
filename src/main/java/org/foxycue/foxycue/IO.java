@@ -1,7 +1,7 @@
 package org.foxycue.foxycue;
-import CueSheetCore.*;
-import javafx.scene.control.TextField;
+import org.apache.commons.lang3.StringUtils;
 
+import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 //import CustomExceptions.*;
@@ -27,7 +27,14 @@ public class IO {
         return filename;
     }
     public static String sanitizeTextField(String textFieldValue){
-        if (textFieldValue.contains("\"")) textFieldValue = textFieldValue.replace("\"", "");
+        if (textFieldValue.contains("\"")) textFieldValue = textFieldValue.replace("\"", "'");
+        //removing diacritics and dialects
+        textFieldValue = removeDiacriticsAndDialect(textFieldValue);
         return textFieldValue;
+    }
+    public static String removeDiacriticsAndDialect(String input){
+        if (input == null) return null;
+        return Normalizer.normalize(input, Normalizer.Form.NFD)
+                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
 }

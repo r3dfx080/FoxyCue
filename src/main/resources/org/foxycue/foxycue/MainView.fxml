@@ -16,7 +16,7 @@
          <children>
             <VBox prefHeight="480.0" prefWidth="410.0">
                <children>
-                  <TextField fx:id="releaseLink" alignment="CENTER" prefHeight="37.0" prefWidth="348.0" promptText="Discogs release link" />
+                  <TextField fx:id="releaseLink" alignment="CENTER" prefHeight="37.0" prefWidth="348.0" promptText="Discogs release link" text="https://www.discogs.com/release/4059484-Beethoven-Brahms-Mullova-Schiff-Previn-Op-97-Archduke-Op-8" />
                   <Button fx:id="fetchButton" alignment="CENTER" mnemonicParsing="false" onAction="#onFetchPressed" prefHeight="39.0" prefWidth="419.0" text="Fetch!" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
