@@ -1,7 +1,7 @@
 package CueSheetCore;
 
 public class Track {
-    private String start_time = "";
+    private String start_time = "00:00:00";
     private String position;
     private int number;
     private String title;

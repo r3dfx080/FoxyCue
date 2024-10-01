@@ -7,12 +7,14 @@ public class CueGenerator {
     private static StringBuilder formattedOutput;
     private static StringBuilder performerStr;
 
-    public static void generateCueFromBase(CueSheetBase cueSheetBase){
+    public static String generateCueFromBase(CueSheetBase cueSheetBase){
 
         List<Track> tracks_in = cueSheetBase.getTracks();
         int trackNo = 1;
         for (Track track : tracks_in) {
             track.setNumber(trackNo);
+            //sanitizing track titles (no " allowed)
+            track.setTitle(track.getTitle().replace("\"", "'"));
             trackNo++;
         }
 
@@ -42,10 +44,7 @@ public class CueGenerator {
                 .append("\n");
         formattedOutput.append("FILE ")
                 .append('"')
-                .append(cueSheetBase.getPerformer())
-                .append(" - ")
-                .append(cueSheetBase.getTitle())
-                .append(".flac")
+                .append(cueSheetBase.getFilename())
                 .append('"')
                 .append(" WAVE")
                 .append("\n");
@@ -68,6 +67,7 @@ public class CueGenerator {
                     .append(track.getStart_time())
                     .append('\n');
         }
-        System.out.printf(String.valueOf(formattedOutput));
+        //System.out.printf(String.valueOf(formattedOutput));
+        return String.valueOf(formattedOutput);
     }
 }

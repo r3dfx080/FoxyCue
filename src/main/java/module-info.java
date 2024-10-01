@@ -4,6 +4,7 @@ module org.foxycue.foxycue {
 
     requires org.controlsfx.controls;
     requires com.google.gson;
+    requires java.net.http;
     opens CueSheetCore to com.google.gson;
 
     opens org.foxycue.foxycue to javafx.fxml;

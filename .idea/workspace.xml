@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="link parser with cue generator&#10;make method to interpret parsed release into cue sheet base" />
+    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="add packages">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/Track.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/foxycue/foxycue/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/foxycue/foxycue/MainView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,11 +48,13 @@
     "Gradle.FoxyCue [:HelloApplication.main()].executor": "Run",
     "Gradle.FoxyCue [:Main.main()].executor": "Run",
     "Gradle.FoxyCue.executor": "Run",
-    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "true",
     "Repository.Attach.Sources": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "H:/SSAU/JAVA/Lab8",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.4425023"
@@ -57,6 +72,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.foxycue.foxycue.Main" />
       <module name="foxycue.main" />
+      <option name="PROGRAM_PARAMETERS" value="--warning-mode all" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727728019841</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add packages">
+      <option name="closed" value="true" />
+      <created>1727728302705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727728302705</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +140,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="make parser and generator core (UI unlinked)" />
     <MESSAGE value="link parser with cue generator&#10;make method to interpret parsed release into cue sheet base" />
-    <option name="LAST_COMMIT_MESSAGE" value="link parser with cue generator&#10;make method to interpret parsed release into cue sheet base" />
+    <MESSAGE value="add packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add packages" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="    public static String sanitizeFilename(String filename){&#10;        Character[] bannedSymbols = {'&lt;', '&gt;', ':', '\&quot;', '/', '\\', '|', '?'};&#10;        for (Character symb: bannedSymbols)&#10;            if (filename.contains(symb.toString())) filename.replace(symb.toString(), &quot;&quot;);&#10;        return filename;&#10;    }" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
