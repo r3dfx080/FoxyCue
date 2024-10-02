@@ -1,5 +1,4 @@
 package org.foxycue.foxycue;
-import org.apache.commons.lang3.StringUtils;
 
 import java.text.Normalizer;
 import java.util.regex.Matcher;

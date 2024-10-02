@@ -1,86 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.foxycue.foxycue.MainViewController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.foxycue.foxycue.MainViewController">
    <children>
-      <Pane prefHeight="480.0" prefWidth="528.0">
-         <children>
-            <VBox prefHeight="480.0" prefWidth="410.0">
+      <SplitPane dividerPositions="0.49613003095975233" prefHeight="480.0" prefWidth="868.0" HBox.hgrow="ALWAYS">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TextField fx:id="releaseLink" alignment="CENTER" prefHeight="37.0" prefWidth="348.0" promptText="Discogs release link" text="https://www.discogs.com/release/4059484-Beethoven-Brahms-Mullova-Schiff-Previn-Op-97-Archduke-Op-8" />
-                  <Button fx:id="fetchButton" alignment="CENTER" mnemonicParsing="false" onAction="#onFetchPressed" prefHeight="39.0" prefWidth="419.0" text="Fetch!" textAlignment="CENTER">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <HBox prefHeight="43.0" prefWidth="348.0">
+                  <Pane prefHeight="480.0" prefWidth="398.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre(s):" textAlignment="RIGHT" wrappingWidth="92.37506103515625" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="genreField" alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS" />
+                        <VBox prefHeight="480.0" prefWidth="398.0">
+                           <children>
+                              <VBox prefHeight="116.0" prefWidth="410.0">
+                                 <children>
+                                    <Pane prefHeight="54.0" prefWidth="395.0">
+                                       <children>
+                                          <TextField fx:id="releaseLink" alignment="CENTER" layoutX="31.0" layoutY="9.0" prefHeight="37.0" prefWidth="360.0" promptText="Discogs release link">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="53.0" prefWidth="401.0">
+                                       <children>
+                                          <Button fx:id="fetchButton" alignment="CENTER" layoutX="31.0" layoutY="5.0" mnemonicParsing="false" onAction="#onFetchPressed" prefHeight="43.0" prefWidth="360.0" text="Fetch" textAlignment="CENTER">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <font>
+                                                <Font name="Cascadia Code Regular" size="17.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox prefHeight="43.0" prefWidth="348.0">
+                                       <children>
+                                          <Pane prefHeight="32.0" prefWidth="90.0">
+                                             <children>
+                                                <Text fontSmoothingType="LCD" layoutX="-10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre(s):" textAlignment="RIGHT" wrappingWidth="90.0" />
+                                             </children>
+                                          </Pane>
+                                          <Pane minWidth="-Infinity" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="genreField" layoutY="2.0" prefHeight="25.0" prefWidth="300.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="37.0" prefWidth="348.0">
+                                       <children>
+                                          <Pane prefHeight="30.0" prefWidth="90.0">
+                                             <children>
+                                                <Text fontSmoothingType="LCD" layoutX="-8.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" textAlignment="RIGHT" wrappingWidth="87.31115531921387" />
+                                             </children>
+                                          </Pane>
+                                          <Pane minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="dateField" layoutY="1.0" prefWidth="300.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="41.0" prefWidth="348.0">
+                                       <children>
+                                          <Pane prefHeight="30.0" prefWidth="90.0">
+                                             <children>
+                                                <Text fontSmoothingType="LCD" layoutX="-3.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment:" textAlignment="RIGHT" wrappingWidth="86.99346542358398" />
+                                             </children>
+                                          </Pane>
+                                          <Pane minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="commentField" layoutY="4.0" prefWidth="300.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="40.0" prefWidth="348.0">
+                                       <children>
+                                          <Pane prefHeight="29.0" prefWidth="90.0">
+                                             <children>
+                                                <Text fontSmoothingType="LCD" layoutX="-6.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performer:" textAlignment="RIGHT" wrappingWidth="86.55596923828125" />
+                                             </children>
+                                          </Pane>
+                                          <Pane minWidth="-Infinity" prefHeight="29.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="performerField" layoutY="2.0" prefWidth="300.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="40.0" prefWidth="348.0">
+                                       <children>
+                                          <Pane prefHeight="29.0" prefWidth="90.0">
+                                             <children>
+                                                <Text fontSmoothingType="LCD" layoutX="-1.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" textAlignment="RIGHT" wrappingWidth="83.07552146911621" />
+                                             </children>
+                                          </Pane>
+                                          <Pane minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="titleField" layoutY="3.0" prefWidth="300.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="40.0" prefWidth="348.0">
+                                       <children>
+                                          <Pane prefHeight="29.0" prefWidth="90.0">
+                                             <children>
+                                                <Text fontSmoothingType="LCD" layoutX="-3.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filename:" textAlignment="RIGHT" wrappingWidth="82.1601791381836" />
+                                             </children>
+                                          </Pane>
+                                          <Pane minWidth="-Infinity" prefHeight="29.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="filenameField" layoutY="2.0" prefWidth="300.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="36.0" prefWidth="411.0">
+                                       <children>
+                                          <TextField fx:id="statusTextField" alignment="CENTER" editable="false" layoutX="90.0" prefHeight="25.0" prefWidth="300.0" promptText="status" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
                      </children>
-                  </HBox>
-                  <HBox prefHeight="37.0" prefWidth="348.0">
-                     <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" textAlignment="RIGHT" wrappingWidth="87.31115531921387" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="dateField" prefHeight="25.0" prefWidth="223.0" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="41.0" prefWidth="348.0">
-                     <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment:" textAlignment="RIGHT" wrappingWidth="86.99346542358398" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="commentField" prefHeight="25.0" prefWidth="263.0" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="40.0" prefWidth="348.0">
-                     <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Performer:" textAlignment="RIGHT" wrappingWidth="86.55596923828125" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="performerField" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="40.0" prefWidth="348.0">
-                     <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" textAlignment="RIGHT" wrappingWidth="83.07552146911621" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="titleField" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="40.0" prefWidth="348.0">
-                     <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Filename:" textAlignment="RIGHT" wrappingWidth="82.1601791381836" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="filenameField" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-                  <TextField fx:id="statusTextField" editable="false" promptText="status" />
+                  </Pane>
                </children>
-            </VBox>
-         </children></Pane>
-      <Pane prefHeight="480.0" prefWidth="540.0">
-         <children>
-            <TextArea fx:id="textArea" layoutX="14.0" layoutY="14.0" prefHeight="397.0" prefWidth="365.0" />
-            <Button fx:id="generateCueButton" layoutX="13.0" layoutY="419.0" mnemonicParsing="false" onAction="#onGeneratePressed" prefHeight="40.0" prefWidth="185.0" text="Generate">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="saveButton" layoutX="210.0" layoutY="419.0" mnemonicParsing="false" onAction="#onSavePressed" prefHeight="40.0" prefWidth="185.0" text="Save">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-         </children>
-      </Pane>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Pane prefHeight="480.0" prefWidth="540.0">
+                     <children>
+                        <VBox prefHeight="480.0" prefWidth="439.0">
+                           <children>
+                              <Pane prefHeight="423.0" prefWidth="421.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <TextArea fx:id="textArea" layoutX="21.0" layoutY="14.0" prefHeight="369.0" prefWidth="398.0" />
+                                 </children>
+                              </Pane>
+                              <HBox prefHeight="117.0" prefWidth="439.0">
+                                 <children>
+                                    <Pane minHeight="60.0" minWidth="200.0" prefHeight="79.0" prefWidth="124.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="generateCueButton" alignment="CENTER" layoutX="26.0" layoutY="22.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGeneratePressed" prefHeight="43.0" prefWidth="167.0" text="Generate">
+                                             <font>
+                                                <Font name="Cascadia Code Regular" size="17.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                    <Pane minHeight="60.0" minWidth="200.0" prefHeight="79.0" prefWidth="129.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="saveButton" layoutX="26.0" layoutY="22.0" minHeight="43.0" minWidth="167.0" mnemonicParsing="false" onAction="#onSavePressed" prefHeight="43.0" prefWidth="167.0" text="Save">
+                                             <font>
+                                                <Font name="Cascadia Code Regular" size="17.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </HBox>

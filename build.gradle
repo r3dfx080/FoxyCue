@@ -28,7 +28,14 @@ application {
   mainModule = 'org.foxycue.foxycue'
   mainClass = 'org.foxycue.foxycue.Main'
 }
-
+jar {
+  manifest {
+    attributes "Main-Class": 'org.foxycue.foxycue.Main'
+  }
+//  from {
+//    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+//  }
+}
 javafx {
   version = '21'
   modules = ['javafx.controls', 'javafx.fxml']
@@ -40,20 +47,30 @@ dependencies {
   implementation ('com.google.code.gson:gson:2.11.0')
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-
-
 }
 
+jlink {
+  targetPlatform("win") {
+    //jdkHome = 'C:\Users\_redfox\.jdks\openjdk-21.0.1'
+    //addExtraModulePath("/usr/lib/openjfx/win/jmods")
+  }
+
+  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+  launcher{
+    name = 'FoxyCue'
+    jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']
+  }
+}
 test {
 useJUnitPlatform()}
 
-jlink {
-  imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
-  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-  launcher {
-    name = 'app'
-  }
-}
+//jlink {
+//  imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+//  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+//  launcher {
+//    name = 'app'
+//  }
+//}
 
 jlinkZip {
   group = 'distribution'
