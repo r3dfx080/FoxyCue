@@ -2,7 +2,6 @@ package org.foxycue.foxycue;
 import CueSheetCore.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -29,61 +28,70 @@ public class MainViewController {
     private Release parsed_release;
     @FXML
     private void onFetchPressed(){
-        //sanitize!
+        //skipping if text field is empty
+        if (releaseLink.getText().isEmpty()) return;
+
+        // TODO make link sanitizer
         String releaseId = IO.extractReleaseId(releaseLink.getText());
-        if (!releaseId.equals("err")) {
+        if (releaseId != null) {
             lockAllFields();
 
-            parsed_release = parse(releaseId);
+            parsed_release = null;
+            parsed_release = parseReleaseViaId(releaseId);
 
             //null check
             if (parsed_release == null) {
-                //throw custom error!
+                // TODO throw custom error!
                 statusTextField.setText("parsed release is null!");
                 return;
             }
 
             statusTextField.setText("parsed release OK");
             unlockAllFields();
-            clearAllFields();
 
             setFieldsFromParsed(parsed_release);
-        }
-        else {
-            //throw custom exception!
-            statusTextField.setText("parsing error!");
         }
     }
     @FXML
     private void onGeneratePressed(){
         lockAllFields();
 
-        CueSheetBase generatedBase = fillCueFromFieldsAndParsed(parsed_release);
+        if (parsed_release == null) {
+            statusTextField.setText("parsed release is null!");
+            // TODO throw custom exception! parsed release is null!
+            unlockAllFields();
+        }
+        else {
+            CueSheetBase generatedBase = fillCueFromFieldsAndParsed(parsed_release);
 
-        unlockAllFields();
+            textArea.setText(CueGenerator.generateCueFromBase(generatedBase));
 
-        textArea.setText(CueGenerator.generateCueFromBase(generatedBase));
-
-        statusTextField.setText("generated cue OK");
+            statusTextField.setText("generated cue OK");
+        }
     }
     @FXML
     private void onSavePressed(){
         lockAllFields();
-        //parse name!
+        // if name is empty and both performer and title are empty - throw exception
+        if (filenameField.getText().isEmpty() & (performerField.getText().isEmpty() & titleField.getText().isEmpty())){
+            unlockAllFields();
+            statusTextField.setText("err: .cue name is empty");
+            //TODO throw custom exception! .cue name is empty!
+            return;
+        }
         String filename = (sanitizeFilename(performerField.getText() + " - " + titleField.getText() + ".cue"));
         try (PrintWriter out = new PrintWriter(filename)) {
             out.println(textArea.getText());
+            statusTextField.setText("saved cue OK");
         } catch (FileNotFoundException e) {
-            //throw custom exception!
+            //TODO throw custom exception! have to be caught beforehand
             throw new RuntimeException(e);
         }
-        finally {
-            unlockAllFields();
-            statusTextField.setText("saved cue OK");
-        }
+        unlockAllFields();
     }
     private void setFieldsFromParsed(Release release){
         unlockAllFields();
+        clearAllFields();
 
         StringBuilder genres = new StringBuilder();
         for (String genre: release.getGenres())

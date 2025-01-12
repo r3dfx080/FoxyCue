@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Main-Class: org.foxycue.foxycue.Main
+Class-Path: javafx-controls-21.jar javafx-base-21-win.jar javafx-base-21
+ .jar javafx-fxml-21-win.jar junit-platform-commons-1.10.0.jar controlsf
+ x-11.1.2.jar junit-platform-engine-1.10.0.jar javafx-controls-21-win.ja
+ r commons-lang3-3.17.0.jar junit-jupiter-api-5.10.0.jar javafx-graphics
+ -21.jar opentest4j-1.3.0.jar error_prone_annotations-2.27.0.jar gson-2.
+ 11.0.jar javafx-graphics-21-win.jar junit-jupiter-engine-5.10.0.jar
+

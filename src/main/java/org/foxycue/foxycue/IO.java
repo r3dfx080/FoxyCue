@@ -10,11 +10,11 @@ public class IO {
         String regex = "https://www\\.discogs\\.com/release/(\\d+)-.*";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(releaseLink);
-        String releaseId = "err";
+        String releaseId = null;
         if (matcher.matches()) {
             releaseId = matcher.group(1);
         } else {
-            //throw custom error!
+            // TODO throw custom error! invalid link format!
             System.out.println("No match found");
         }
         return releaseId;
