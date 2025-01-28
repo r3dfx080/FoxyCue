@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="FileLogger" fileName="foxycue.log" append="true">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Async name="AsyncFileLogger">
+            <AppenderRef ref="FileLogger"/>
+        </Async>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="AsyncFileLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>

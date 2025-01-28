@@ -9,15 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="update gui">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icon.png" afterDir="false" />
+    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="create&amp;write README.md, make TODOs, minor edits">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,19 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="foxycue" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="foxycue" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="foxycue" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -101,16 +111,21 @@
     "Gradle.FoxyCue [:HelloApplication.main()].executor": "Run",
     "Gradle.FoxyCue [:Main.main()].executor": "Run",
     "Gradle.FoxyCue [:org.foxycue.foxycue.Main.main()].executor": "Run",
+    "Gradle.FoxyCue [buildEnvironment].executor": "Run",
     "Gradle.FoxyCue [build].executor": "Run",
     "Gradle.FoxyCue [clean jlink].executor": "Run",
     "Gradle.FoxyCue [clean].executor": "Run",
+    "Gradle.FoxyCue [dependencies].executor": "Run",
+    "Gradle.FoxyCue [help].executor": "Run",
     "Gradle.FoxyCue [jar].executor": "Run",
     "Gradle.FoxyCue [jpackageImage].executor": "Run",
     "Gradle.FoxyCue [jpackage].executor": "Run",
+    "Gradle.FoxyCue [properties].executor": "Run",
+    "Gradle.FoxyCue [run].executor": "Run",
     "Gradle.FoxyCue.executor": "Run",
     "JAR Application.foxycue-0.1.jar.executor": "Run",
     "JAR Application.foxycue.jar.executor": "Run",
-    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "true",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -148,7 +163,7 @@
       <command value="gradle clean jlink" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.FoxyCue [clean]">
+  <component name="RunManager" selected="Gradle.FoxyCue [run]">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="MAIN_CLASS_NAME" value="org.foxycue.foxycue.Main" />
@@ -158,7 +173,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FoxyCue [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FoxyCue [buildEnvironment]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +184,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="buildEnvironment" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -181,19 +196,18 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FoxyCue [clean jlink]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FoxyCue [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
-            <option value="jlink" />
+            <option value="dependencies" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -205,7 +219,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FoxyCue [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FoxyCue [help]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -216,7 +230,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value="help" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -228,7 +242,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FoxyCue [jpackageImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FoxyCue [properties]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -239,7 +253,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jpackageImage" />
+            <option value="properties" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -251,7 +265,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FoxyCue [jpackage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FoxyCue [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -262,7 +276,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jpackage" />
+            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -276,19 +290,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.FoxyCue [clean]" />
-      <item itemvalue="Gradle.FoxyCue [build]" />
-      <item itemvalue="Gradle.FoxyCue [jpackageImage]" />
-      <item itemvalue="Gradle.FoxyCue [jpackage]" />
-      <item itemvalue="Gradle.FoxyCue [clean jlink]" />
+      <item itemvalue="Gradle.FoxyCue [run]" />
+      <item itemvalue="Gradle.FoxyCue [buildEnvironment]" />
+      <item itemvalue="Gradle.FoxyCue [dependencies]" />
+      <item itemvalue="Gradle.FoxyCue [help]" />
+      <item itemvalue="Gradle.FoxyCue [properties]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FoxyCue [clean]" />
-        <item itemvalue="Gradle.FoxyCue [jpackageImage]" />
-        <item itemvalue="Gradle.FoxyCue [build]" />
-        <item itemvalue="Gradle.FoxyCue [jpackage]" />
-        <item itemvalue="Gradle.FoxyCue [clean jlink]" />
+        <item itemvalue="Gradle.FoxyCue [run]" />
+        <item itemvalue="Gradle.FoxyCue [dependencies]" />
+        <item itemvalue="Gradle.FoxyCue [help]" />
+        <item itemvalue="Gradle.FoxyCue [buildEnvironment]" />
+        <item itemvalue="Gradle.FoxyCue [properties]" />
       </list>
     </recent_temporary>
   </component>
@@ -339,7 +353,13 @@
       <workItem from="1735778744188" duration="904000" />
       <workItem from="1735937254292" duration="424000" />
       <workItem from="1736413905083" duration="5076000" />
-      <workItem from="1736607779756" duration="3593000" />
+      <workItem from="1736607779756" duration="4611000" />
+      <workItem from="1737219319017" duration="599000" />
+      <workItem from="1737534376832" duration="599000" />
+      <workItem from="1737758635087" duration="597000" />
+      <workItem from="1737888103967" duration="598000" />
+      <workItem from="1737978509960" duration="3363000" />
+      <workItem from="1738067817655" duration="3495000" />
     </task>
     <task id="LOCAL-00001" summary="make parser and generator core (UI unlinked)">
       <option name="closed" value="true" />
@@ -389,7 +409,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727888900652</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create&amp;write README.md, make TODOs, minor edits">
+      <option name="closed" value="true" />
+      <created>1736697278875</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736697278875</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +453,8 @@
     <MESSAGE value="link GUI and generator, make input sanitizers, add textfields and buttons" />
     <MESSAGE value="add dialect/diacritics remover, fix json utf-8 interpretation" />
     <MESSAGE value="update gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gui" />
+    <MESSAGE value="create&amp;write README.md, make TODOs, minor edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="create&amp;write README.md, make TODOs, minor edits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

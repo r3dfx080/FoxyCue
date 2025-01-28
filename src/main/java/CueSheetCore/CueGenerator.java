@@ -62,12 +62,11 @@ public class CueGenerator {
                     .append(track.getTitle())
                     .append('"')
                     .append('\n');
-            //formattedOutput.append("    ").append(performerStr).append('\n');
             formattedOutput.append("    INDEX 01 ")
                     .append(track.getStart_time())
                     .append('\n');
         }
-        //System.out.printf(String.valueOf(formattedOutput));
+
         return String.valueOf(formattedOutput);
     }
 }
