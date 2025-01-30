@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("FoxyCue v0.2");
+        stage.setTitle("FoxyCue");
         stage.getIcons().add(new Image("file:icon.png"));
         stage.setResizable(false);
         stage.setScene(scene);
@@ -26,7 +26,11 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        logger.info("Launching Application");
+        logger.info("Launching application");
         launch();
+    }
+
+    public void stop() throws Exception {
+        logger.info("Stopping application");
     }
 }

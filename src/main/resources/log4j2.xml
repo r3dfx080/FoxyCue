@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
     <Appenders>
-        <File name="FileLogger" fileName="foxycue.log" append="true">
+        <File name="FileLogger" fileName="foxycue.log" append="false">
             <PatternLayout>
-                <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Pattern>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36}.%M - %msg%n</Pattern>
             </PatternLayout>
         </File>
-        <Async name="AsyncFileLogger">
+        <Async name="AsyncFileLogger" includeLocation="true">
             <AppenderRef ref="FileLogger"/>
         </Async>
     </Appenders>
