@@ -30,7 +30,7 @@ public class Main extends Application {
         launch();
     }
 
-    public void stop() throws Exception {
+    public void stop(){
         logger.info("Stopping application");
     }
 }

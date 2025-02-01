@@ -1,6 +1,7 @@
 package CueSheetCore;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Release {
     private int id;
@@ -9,6 +10,28 @@ public class Release {
     private List<Artist> artists;
     private int year;
     private List<Track> tracklist;
+
+    @Override
+    public String toString(){
+        StringJoiner sj = new StringJoiner("|", "[", "]");
+        sj.add("id :" + id)
+                .add("year: " + year)
+                .add("title: " + title)
+                .add("artists: ");
+
+        for (Artist a : artists)
+            sj.add(a.getName());
+
+        sj.add("genres: ");
+        for (String s : genres)
+            sj.add(s);
+
+        sj.add("tracklist: ");
+        for (Track t : tracklist)
+            sj.add(t.getPosition() + "-" + t.getTitle());
+
+        return sj.toString();
+    }
 
     // Getters and Setters
     public int getId() {

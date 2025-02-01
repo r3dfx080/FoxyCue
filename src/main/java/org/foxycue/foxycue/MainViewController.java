@@ -60,19 +60,7 @@ public class MainViewController {
 
             // TODO implement toString() for Realease
 
-            logger.info("Parsed release " +
-                    "id: {}, " +
-                    "title: {}, " +
-                    "genres: {}, " +
-                    "artists: {}, " +
-                    "year: {}, " +
-                    "tracks: {}",
-                    parsed_release.getId(),
-                    parsed_release.getTitle(),
-                    parsed_release.getGenres(),
-                    parsed_release.getArtists(),
-                    parsed_release.getYear(),
-                    Arrays.toString(parsed_release.getTracklist().toArray()));
+            logger.info(parsed_release);
 
             setFieldsFromParsed(parsed_release);
         }

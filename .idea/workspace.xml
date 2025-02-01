@@ -9,12 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="add log4j2 logger, make log4j2.xml config file">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="further implement logging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueSheetBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/CueSheetBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CueSheetCore/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CueSheetCore/Release.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +361,8 @@
       <workItem from="1737888103967" duration="598000" />
       <workItem from="1737978509960" duration="3363000" />
       <workItem from="1738067817655" duration="5171000" />
-      <workItem from="1738220846049" duration="4511000" />
+      <workItem from="1738220846049" duration="4618000" />
+      <workItem from="1738412292361" duration="2692000" />
     </task>
     <task id="LOCAL-00001" summary="make parser and generator core (UI unlinked)">
       <option name="closed" value="true" />
@@ -425,11 +428,22 @@
       <option name="project" value="LOCAL" />
       <updated>1738090151936</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="further implement logging">
+      <option name="closed" value="true" />
+      <created>1738265489284</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738265489284</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.cue" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -463,7 +477,8 @@
     <MESSAGE value="update gui" />
     <MESSAGE value="create&amp;write README.md, make TODOs, minor edits" />
     <MESSAGE value="add log4j2 logger, make log4j2.xml config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add log4j2 logger, make log4j2.xml config file" />
+    <MESSAGE value="further implement logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="further implement logging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

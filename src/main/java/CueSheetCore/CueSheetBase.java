@@ -1,6 +1,7 @@
 package CueSheetCore;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 public class CueSheetBase {
     private String genre;
@@ -11,6 +12,24 @@ public class CueSheetBase {
     private String filename;
     int nOfTracks;
     private List<Track> tracks;
+
+
+    @Override
+    public String toString() {
+        StringJoiner sj = new StringJoiner("|", "[", "]");
+        sj.add("genre: " + genre)
+                .add("date: " + date)
+                .add("comment: " + comment)
+                .add("performer: " + performer)
+                .add("title: " + title)
+                .add("filename: " + filename);
+
+        sj.add("tracklist: ");
+        for (Track t : tracks)
+            sj.add(t.getPosition() + "-" + t.getTitle());
+
+        return sj.toString();
+    }
 
     public CueSheetBase(String genre, String date, String comment, String performer, String title, String filename, List<Track> tracks) {
         setGenre(genre);
