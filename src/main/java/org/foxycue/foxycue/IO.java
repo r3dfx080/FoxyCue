@@ -21,7 +21,6 @@ public class IO {
         } else {
             logger.error("Invalid link format");
             // TODO throw custom error! invalid link format!
-            //System.out.println("No match found");
         }
         return releaseId;
     }

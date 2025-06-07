@@ -4,12 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 import static org.foxycue.foxycue.IO.*;
 import static org.foxycue.foxycue.Parser.*;
@@ -58,7 +59,7 @@ public class MainViewController {
                 return;
             }
 
-            // TODO implement toString() for Realease
+            // TODO implement toString() for Release
 
             logger.info(parsed_release);
 
@@ -80,6 +81,7 @@ public class MainViewController {
     @FXML
     private void onSavePressed(){
         lockAllFields();
+
         // if name is empty and both performer and title are empty - throw exception
         if (filenameField.getText().isEmpty() & (performerField.getText().isEmpty() & titleField.getText().isEmpty())){
             unlockAllFields();
@@ -90,11 +92,19 @@ public class MainViewController {
         }
         String filename = (sanitizeFilename(performerField.getText() + " - " + titleField.getText() + ".cue"));
 
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.setTitle("Save Cue file");
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
+        fileChooser.setInitialFileName(filename);
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Cue file", "*.cue"));
+
+        fileChooser.showSaveDialog(textArea.getScene().getWindow());
 
         try (PrintWriter out = new PrintWriter(filename)) {
             out.println(textArea.getText());
             unlockAllFields();
-            logger.info("Written text to {}:", filename);
+            logger.info("Written text to: {}", filename);
             //statusTextField.setText("saved cue OK");
         }
         catch (FileNotFoundException e) {
@@ -144,9 +154,9 @@ public class MainViewController {
                 titleField.getText(), filenameField.getText(),
                 release.getTracklist());
 
-        unlockAllFields();
-
         logger.info("Filled .cue base: {}", filledCueBase);
+
+        unlockAllFields();
 
         return filledCueBase;
     }
