@@ -46,7 +46,7 @@ dependencies {
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '3.0.0-beta2'
   runtimeOnly 'com.lmax:disruptor:4.0.0'
   implementation('org.controlsfx:controlsfx:11.1.2')
-  implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.0'
+  implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.18.0'
   implementation ('com.google.code.gson:gson:2.11.0')
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
@@ -58,9 +58,13 @@ jlink {
     //addExtraModulePath("/usr/lib/openjfx/win/jmods")
   }
   jpackage {
-    icon = "src/main/resources/org/foxycue/foxycue/icon.ico"
+    def winIcon = "${projectDir}/src/main/resources/org/foxycue/foxycue/icon.ico"
+    icon = winIcon
+    imageOptions = ['--icon', winIcon]
+    installerOptions = ['--icon', winIcon]
+    installerType = 'exe'
   }
-  options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+  options = ['--strip-debug', '--no-header-files', '--no-man-pages']
   launcher{
     name = 'FoxyCue'
     jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']

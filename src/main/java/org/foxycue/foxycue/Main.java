@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Main extends Application {
     public static final Logger logger = LogManager.getLogger(Main.class);
@@ -19,7 +20,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("FoxyCue");
-        stage.getIcons().add(new Image("file:icon.png"));
+        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/org/foxycue/foxycue/icon.png"))));
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();

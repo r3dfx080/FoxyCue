@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="add custom toString implementations">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" afterDir="false" />
+    <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="Fix icon missing after running jpackage">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +79,12 @@
     &quot;assignee&quot;: &quot;r3dfx080&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/r3dfx080/FoxyCue.git&quot;,
-    &quot;accountId&quot;: &quot;f96a0aa2-e15c-4ab5-9fe1-3e73a460568d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/r3dfx080/FoxyCue.git",
+    "accountId": "3b59f395-197f-4c94-9a57-f019de35eb8c"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -95,56 +92,56 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2mlObVMBVJWNvzVB0NDmufb7KAY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Unnamed.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Gradle.Build FoxyCue.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.FoxyCue [:HelloApplication.main()].executor": "Run",
-    "Gradle.FoxyCue [:Main.main()].executor": "Run",
-    "Gradle.FoxyCue [:org.foxycue.foxycue.Main.main()].executor": "Run",
-    "Gradle.FoxyCue [buildEnvironment].executor": "Run",
-    "Gradle.FoxyCue [build].executor": "Run",
-    "Gradle.FoxyCue [clean jlink].executor": "Run",
-    "Gradle.FoxyCue [clean].executor": "Run",
-    "Gradle.FoxyCue [dependencies].executor": "Run",
-    "Gradle.FoxyCue [help].executor": "Run",
-    "Gradle.FoxyCue [jar].executor": "Run",
-    "Gradle.FoxyCue [jpackageImage].executor": "Run",
-    "Gradle.FoxyCue [jpackage].executor": "Run",
-    "Gradle.FoxyCue [properties].executor": "Run",
-    "Gradle.FoxyCue [run].executor": "Run",
-    "Gradle.FoxyCue.executor": "Run",
-    "JAR Application.foxycue-0.1.jar.executor": "Run",
-    "JAR Application.foxycue.jar.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/_redfox/Desktop/temp1.jpg",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.45762712",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Gradle.Build FoxyCue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [:HelloApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [:org.foxycue.foxycue.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [buildEnvironment].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [clean jlink].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [help].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [jpackageImage].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [jpackage].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [properties].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FoxyCue.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.foxycue-0.1.jar.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.foxycue.jar.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WORK/FoxyCue&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45762712&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\Arkady\FoxyCue\FoxyCue\src\main\resources\org\foxycue\foxycue" />
@@ -161,7 +158,7 @@
       <command value="gradle clean jlink" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.FoxyCue [run]">
+  <component name="RunManager" selected="Gradle.FoxyCue [jpackage]">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="MAIN_CLASS_NAME" value="org.foxycue.foxycue.Main" />
@@ -190,6 +187,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
+      <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
@@ -213,6 +211,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
+      <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
@@ -236,6 +235,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
+      <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
@@ -245,7 +245,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -259,6 +259,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
+      <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
@@ -282,6 +283,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
+      <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
@@ -296,8 +298,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FoxyCue [run]" />
         <item itemvalue="Gradle.FoxyCue [jpackage]" />
+        <item itemvalue="Gradle.FoxyCue [run]" />
         <item itemvalue="Gradle.FoxyCue [dependencies]" />
         <item itemvalue="Gradle.FoxyCue [help]" />
         <item itemvalue="Gradle.FoxyCue [buildEnvironment]" />
@@ -307,8 +309,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -372,6 +374,8 @@
       <workItem from="1740591610728" duration="206000" />
       <workItem from="1749326189884" duration="2545000" />
       <workItem from="1749337931149" duration="253000" />
+      <workItem from="1774852858901" duration="1254000" />
+      <workItem from="1774854147634" duration="1770000" />
     </task>
     <task id="LOCAL-00001" summary="make parser and generator core (UI unlinked)">
       <option name="closed" value="true" />
@@ -453,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738427671900</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix icon missing after running jpackage">
+      <option name="closed" value="true" />
+      <created>1774855895098</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1774855895098</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +508,9 @@
     <MESSAGE value="add log4j2 logger, make log4j2.xml config file" />
     <MESSAGE value="further implement logging" />
     <MESSAGE value="add custom toString implementations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add custom toString implementations" />
+    <MESSAGE value="Fix icon missing after running jpackage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix icon missing after running jpackage" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
