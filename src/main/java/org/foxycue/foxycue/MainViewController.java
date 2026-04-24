@@ -1,6 +1,11 @@
 package org.foxycue.foxycue;
-import CueSheetCore.*;
+
+import CueSheetCore.Artist;
+import CueSheetCore.CueGenerator;
+import CueSheetCore.CueSheetBase;
+import CueSheetCore.Release;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -13,7 +18,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 import static org.foxycue.foxycue.IO.*;
-import static org.foxycue.foxycue.Parser.*;
+import static org.foxycue.foxycue.Parser.parseReleaseViaId;
 
 public class MainViewController {
     public Button generateCueButton;
@@ -27,67 +32,56 @@ public class MainViewController {
     public TextField performerField;
     public TextField titleField;
     public TextField filenameField;
-    public TextField statusTextField;
 
     private Release parsed_release;
 
     private static final Logger logger = LogManager.getLogger(MainViewController.class);
 
     @FXML
-    private void onFetchPressed(){
-        // skipping if text field is empty
-        if (releaseLink.getText().isEmpty()) {
-            logger.error("Release link is empty");
-            return;
-        }
+    private void onFetchPressed() {
+        if (releaseLink.getText().isEmpty()) return;
 
         // TODO make link sanitizer
         String releaseId = IO.extractReleaseId(releaseLink.getText());
-
         logger.info("Parsed release ID: {}", releaseId);
 
-        if (releaseId != null) {
-            lockAllFields();
-
-            parsed_release = parseReleaseViaId(releaseId);
-
-            // parsed release null check
-            if (parsed_release == null) {
-                // TODO throw custom error!
-                //statusTextField.setText("parsed release is null!");
-                logger.error("Parsed release is null");
-                return;
-            }
-
-            // TODO implement toString() for Release
-
-            logger.info(parsed_release);
-
-            setFieldsFromParsed(parsed_release);
+        if (releaseId == null) {
+            showAndLogError("Incorrect link: ReleaseID is empty", Alert.AlertType.ERROR, true);
+            return;
         }
-        else {
-            logger.error("ReleaseID is empty");
+        lockAllFields();
+
+        parsed_release = parseReleaseViaId(releaseId);
+
+        if (parsed_release == null) {
+            showAndLogError("Parsed release is null", Alert.AlertType.ERROR, true);
+            return;
         }
+
+        // TODO implement toString() for Release
+
+        logger.info(parsed_release);
+        setFieldsFromParsed(parsed_release);
     }
+
     @FXML
-    private void onGeneratePressed(){
+    private void onGeneratePressed() {
+        if (parsed_release == null) return;
 
         CueSheetBase generatedBase = fillCueFromFieldsAndParsed(parsed_release);
         logger.info("Generated .cue base successfully");
 
         textArea.setText(CueGenerator.generateCueFromBase(generatedBase));
-
     }
+
     @FXML
-    private void onSavePressed(){
+    private void onSavePressed() {
         lockAllFields();
 
-        // if name is empty and both performer and title are empty - throw exception
-        if (filenameField.getText().isEmpty() & (performerField.getText().isEmpty() & titleField.getText().isEmpty())){
+        // name is empty and both performer and title are empty -> throw exception
+        if (filenameField.getText().isEmpty() & (performerField.getText().isEmpty() & titleField.getText().isEmpty())) {
             unlockAllFields();
-            logger.error("Both filename and (performer & title) are empty");
-            //statusTextField.setText("err: .cue name is empty");
-            // TODO throw custom exception! .cue name is empty!
+            IO.showAndLogError("File name, performer and title are empty", Alert.AlertType.ERROR, true);
             return;
         }
         String filename = (sanitizeFilename(performerField.getText() + " - " + titleField.getText() + ".cue"));
@@ -99,31 +93,33 @@ public class MainViewController {
         fileChooser.setInitialFileName(filename);
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Cue file", "*.cue"));
 
-        fileChooser.showSaveDialog(textArea.getScene().getWindow());
+        File file = fileChooser.showSaveDialog(textArea.getScene().getWindow());
 
-        try (PrintWriter out = new PrintWriter(filename)) {
-            out.println(textArea.getText());
+        // user closed save dialog -> return
+        if (file == null) {
             unlockAllFields();
-            logger.info("Written text to: {}", filename);
-            //statusTextField.setText("saved cue OK");
+            return;
         }
-        catch (FileNotFoundException e) {
-            unlockAllFields();
 
-            //TODO throw custom exception! have to be caught beforehand
+        try (PrintWriter out = new PrintWriter(file)) {
+            out.println(textArea.getText());
+            logger.info("Successfully written .cue file");
+        } catch (FileNotFoundException e) {
+            IO.showAndLogError("File not found", Alert.AlertType.ERROR, false);
             logger.error(e.getMessage(), e);
-
-            throw new RuntimeException(e);
+        } finally {
+            unlockAllFields();
         }
     }
-    private void setFieldsFromParsed(Release release){
+
+    private void setFieldsFromParsed(Release release) {
         unlockAllFields();
         clearAllFields();
 
         StringBuilder genres = new StringBuilder();
-        for (String genre: release.getGenres())
+        for (String genre : release.getGenres())
             genres.append(genre).append(", ");
-        genres.delete(genres.length()-2, genres.length());
+        genres.delete(genres.length() - 2, genres.length());
 
         //no need for sanitization (correct format)
         genreField.setText(genres.toString());
@@ -131,9 +127,9 @@ public class MainViewController {
         commentField.setText("");
 
         StringBuilder performers = new StringBuilder();
-        for (Artist artist: release.getArtists())
+        for (Artist artist : release.getArtists())
             performers.append(artist.getName()).append(", ");
-        performers.delete(performers.length()-2, performers.length());
+        performers.delete(performers.length() - 2, performers.length());
 
         performerField.setText(sanitizeTextField(performers.toString()));
         titleField.setText(sanitizeTextField(release.getTitle()));
@@ -142,7 +138,8 @@ public class MainViewController {
 
         logger.info("Set .cue fields successfully");
     }
-    private CueSheetBase fillCueFromFieldsAndParsed(Release release){
+
+    private CueSheetBase fillCueFromFieldsAndParsed(Release release) {
         lockAllFields();
 
         // sanitize comment after user input
@@ -160,7 +157,8 @@ public class MainViewController {
 
         return filledCueBase;
     }
-    private void clearAllFields(){
+
+    private void clearAllFields() {
         genreField.clear();
         dateField.clear();
         commentField.clear();
@@ -170,7 +168,8 @@ public class MainViewController {
         textArea.clear();
         logger.info("Cleared all fields");
     }
-    private void lockAllFields(){
+
+    private void lockAllFields() {
         genreField.setDisable(true);
         dateField.setDisable(true);
         commentField.setDisable(true);
@@ -180,7 +179,8 @@ public class MainViewController {
         textArea.setDisable(true);
         logger.info("Locked all fields");
     }
-    private void unlockAllFields(){
+
+    private void unlockAllFields() {
         genreField.setDisable(false);
         dateField.setDisable(false);
         commentField.setDisable(false);

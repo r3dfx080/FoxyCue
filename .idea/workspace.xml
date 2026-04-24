@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c817ab12-c65d-4e1c-b56d-01921539ad52" name="Changes" comment="Fix icon missing after running jpackage">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/foxycue/foxycue/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/foxycue/foxycue/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/foxycue/foxycue/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,34 +42,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="foxycue" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="foxycue" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="foxycue" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="foxycue" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="foxycue" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="foxycue" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -82,7 +61,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/r3dfx080/FoxyCue.git",
-    "accountId": "3b59f395-197f-4c94-9a57-f019de35eb8c"
+    "accountId": "f96a0aa2-e15c-4ab5-9fe1-3e73a460568d"
   }
 }]]></component>
   <component name="ProblemsViewState">
@@ -96,52 +75,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Gradle.Build FoxyCue.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [:HelloApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [:org.foxycue.foxycue.Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [buildEnvironment].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [clean jlink].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [help].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [jpackageImage].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [jpackage].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [properties].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FoxyCue.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.foxycue-0.1.jar.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.foxycue.jar.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WORK/FoxyCue&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.45762712&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Unnamed.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Gradle.Build FoxyCue.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.FoxyCue [:HelloApplication.main()].executor": "Run",
+    "Gradle.FoxyCue [:Main.main()].executor": "Run",
+    "Gradle.FoxyCue [:org.foxycue.foxycue.Main.main()].executor": "Run",
+    "Gradle.FoxyCue [buildEnvironment].executor": "Run",
+    "Gradle.FoxyCue [build].executor": "Run",
+    "Gradle.FoxyCue [clean jlink].executor": "Run",
+    "Gradle.FoxyCue [clean].executor": "Run",
+    "Gradle.FoxyCue [dependencies].executor": "Run",
+    "Gradle.FoxyCue [help].executor": "Run",
+    "Gradle.FoxyCue [jar].executor": "Run",
+    "Gradle.FoxyCue [jpackageImage].executor": "Run",
+    "Gradle.FoxyCue [jpackage].executor": "Run",
+    "Gradle.FoxyCue [properties].executor": "Run",
+    "Gradle.FoxyCue [run].executor": "Run",
+    "Gradle.FoxyCue.executor": "Run",
+    "JAR Application.foxycue-0.1.jar.executor": "Run",
+    "JAR Application.foxycue.jar.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/WORK/FoxyCue",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.45762712",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\Arkady\FoxyCue\FoxyCue\src\main\resources\org\foxycue\foxycue" />
@@ -158,7 +138,7 @@
       <command value="gradle clean jlink" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.FoxyCue [jpackage]">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="MAIN_CLASS_NAME" value="org.foxycue.foxycue.Main" />
@@ -186,10 +166,13 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
       <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="FoxyCue [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -210,10 +193,13 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
       <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="FoxyCue [help]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -234,10 +220,13 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
       <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="FoxyCue [jpackage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -258,10 +247,13 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
       <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="FoxyCue [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -282,10 +274,13 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <EXTENSION ID="com.haulmont.jmixstudio.buildsystem.gradle.runconfiguration.JmixGradleRunConfigurationExtension" isNew="true" />
       <EXTENSION ID="com.haulmont.jmixstudio.runconfiguration.JmixRunConfigurationExtension" isNew="true" />
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <list>
@@ -309,8 +304,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
       </set>
     </attachedChunks>
   </component>
@@ -376,6 +371,7 @@
       <workItem from="1749337931149" duration="253000" />
       <workItem from="1774852858901" duration="1254000" />
       <workItem from="1774854147634" duration="1770000" />
+      <workItem from="1777054998488" duration="2761000" />
     </task>
     <task id="LOCAL-00001" summary="make parser and generator core (UI unlinked)">
       <option name="closed" value="true" />

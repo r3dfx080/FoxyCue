@@ -7,6 +7,7 @@ module org.foxycue.foxycue {
     requires java.net.http;
     requires jdk.crypto.ec;
     requires org.apache.logging.log4j.core;
+    requires org.apache.logging.log4j;
 
     opens CueSheetCore to com.google.gson;
 

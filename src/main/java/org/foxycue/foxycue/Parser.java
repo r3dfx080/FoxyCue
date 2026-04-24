@@ -1,12 +1,16 @@
 package org.foxycue.foxycue;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.*;
 
-import CueSheetCore.*;
+import CueSheetCore.Release;
 import com.google.gson.Gson;
+import javafx.scene.control.Alert;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
 
 public class Parser {
 
@@ -21,22 +25,18 @@ public class Parser {
         try {
             // send the GET request to the Discogs API
             jsonResponse = sendGET(releaseId);
-        } catch (SocketTimeoutException e) {
-            logger.error(e.getMessage(), e);
-            // TODO throw custom exception! socket timeout!
-            return null;
         } catch (Exception e) {
+            IO.showAndLogError("Couldn't get a response from discogs.com", Alert.AlertType.ERROR, false);
             logger.error(e.getMessage(), e);
-            // TODO throw generic exception!
-            throw new RuntimeException(e);
+            return null;
         }
         if (jsonResponse != null) {
             Gson gson = new Gson();
             release = gson.fromJson(jsonResponse, Release.class);
-            logger.info("Created release from json");
+            logger.info("Successfully created release from json");
         }
         else {
-            logger.error("Json response is null");
+            IO.showAndLogError("Couldn't get release from json", Alert.AlertType.ERROR, true);
         }
         return release;
     }
@@ -53,8 +53,7 @@ public class Parser {
         connection.setReadTimeout(5000); // 5 seconds read timeout
 
         if (connection.getResponseCode() != 200){
-            logger.error("Connetion timed out");
-            // TODO add custom error window
+            IO.showAndLogError("Connection timed out", Alert.AlertType.ERROR, true);
             return null;
         }
         StringBuilder response = new StringBuilder();

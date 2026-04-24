@@ -1,6 +1,5 @@
 package org.foxycue.foxycue;
 
-//import CustomExceptions.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,12 +25,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
-        logger.info("Launching application");
-        launch();
-    }
-
-    public void stop(){
+    public void stop() {
         logger.info("Stopping application");
     }
 }
