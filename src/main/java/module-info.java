@@ -15,6 +15,5 @@ module org.foxycue.foxycue {
     exports org.foxycue.foxycue;
 
 
-
     exports CueSheetCore;
 }

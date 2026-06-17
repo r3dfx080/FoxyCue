@@ -18,8 +18,6 @@ public class IO {
         String releaseId = null;
         if (matcher.matches()) {
             releaseId = matcher.group(1);
-        } else {
-            showAndLogError("Invalid link format", Alert.AlertType.ERROR, true);
         }
         return releaseId;
     }

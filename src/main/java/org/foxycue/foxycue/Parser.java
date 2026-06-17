@@ -23,7 +23,6 @@ public class Parser {
         Release release = new Release();
         String jsonResponse;
         try {
-            // send the GET request to the Discogs API
             jsonResponse = sendGET(releaseId);
         } catch (Exception e) {
             IO.showAndLogError("Couldn't get a response from discogs.com", Alert.AlertType.ERROR, false);
@@ -34,8 +33,7 @@ public class Parser {
             Gson gson = new Gson();
             release = gson.fromJson(jsonResponse, Release.class);
             logger.info("Successfully created release from json");
-        }
-        else {
+        } else {
             IO.showAndLogError("Couldn't get release from json", Alert.AlertType.ERROR, true);
         }
         return release;
@@ -52,12 +50,12 @@ public class Parser {
         connection.setConnectTimeout(20000); // 20 seconds connection timeout
         connection.setReadTimeout(5000); // 5 seconds read timeout
 
-        if (connection.getResponseCode() != 200){
+        if (connection.getResponseCode() != 200) {
             IO.showAndLogError("Connection timed out", Alert.AlertType.ERROR, true);
             return null;
         }
         StringBuilder response = new StringBuilder();
-        try(BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))){
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))) {
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);

@@ -5,7 +5,12 @@ public class Track {
     private String position;
     private int number;
     private String title;
-    private String type_;
+    private String type;
+
+    public Track(int number, String title) {
+        this.number = number;
+        this.title = title;
+    }
 
     public String getStart_time() {
         return start_time;
@@ -32,11 +37,11 @@ public class Track {
     }
 
     public String getType() {
-        return type_;
+        return type;
     }
 
     public void setType(String type) {
-        this.type_ = type_;
+        this.type = this.type;
     }
 
     public int getNumber() {

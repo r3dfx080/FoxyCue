@@ -33,7 +33,6 @@ public class Release {
         return sj.toString();
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }

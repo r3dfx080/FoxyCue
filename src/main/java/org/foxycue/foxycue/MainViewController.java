@@ -41,14 +41,15 @@ public class MainViewController {
     private void onFetchPressed() {
         if (releaseLink.getText().isEmpty()) return;
 
-        // TODO make link sanitizer
         String releaseId = IO.extractReleaseId(releaseLink.getText());
-        logger.info("Parsed release ID: {}", releaseId);
-
-        if (releaseId == null) {
-            showAndLogError("Incorrect link: ReleaseID is empty", Alert.AlertType.ERROR, true);
+        if (releaseId == null)
+        {
+            showAndLogError("Invalid link format or ID field is empty", Alert.AlertType.ERROR, true);
             return;
         }
+
+        logger.info("Parsed release ID: {}", releaseId);
+
         lockAllFields();
 
         parsed_release = parseReleaseViaId(releaseId);
@@ -57,8 +58,6 @@ public class MainViewController {
             showAndLogError("Parsed release is null", Alert.AlertType.ERROR, true);
             return;
         }
-
-        // TODO implement toString() for Release
 
         logger.info(parsed_release);
         setFieldsFromParsed(parsed_release);

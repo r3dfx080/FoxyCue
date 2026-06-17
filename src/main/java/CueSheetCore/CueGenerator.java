@@ -3,9 +3,6 @@ package CueSheetCore;
 import java.util.List;
 
 public class CueGenerator {
-    private CueSheetBase cueSheetBase;
-    private static StringBuilder formattedOutput;
-    private static StringBuilder performerStr;
 
     public static String generateCueFromBase(CueSheetBase cueSheetBase){
 
@@ -18,7 +15,7 @@ public class CueGenerator {
             trackNo++;
         }
 
-        formattedOutput = new StringBuilder();
+        StringBuilder formattedOutput = new StringBuilder();
         if (cueSheetBase.getGenre() != null) formattedOutput
                 .append("REM GENRE ")
                 .append(cueSheetBase.getGenre())
@@ -31,11 +28,11 @@ public class CueGenerator {
                 .append("REM COMMENT ")
                 .append(cueSheetBase.getComment())
                 .append("\n");
-        performerStr = new StringBuilder();
-        performerStr.append("PERFORMER ")
-                .append('"')
-                .append(cueSheetBase.getPerformer())
-                .append('"');
+
+        String performerStr = "PERFORMER " +
+                '"' +
+                cueSheetBase.getPerformer() +
+                '"';
         formattedOutput.append(performerStr).append("\n");
         formattedOutput.append("TITLE ")
                 .append('"')

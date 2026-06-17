@@ -1,77 +1,78 @@
 plugins {
-  id 'java'
-  id 'application'
-  id 'org.javamodularity.moduleplugin' version '1.8.12'
-  id 'org.openjfx.javafxplugin' version '0.0.13'
-  id 'org.beryx.jlink' version '2.25.0'
+    id 'java'
+    id 'application'
+    id 'org.javamodularity.moduleplugin' version '1.8.12'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'org.beryx.jlink' version '2.25.0'
 }
 
 group 'org.foxycue'
 version '0.3'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 ext {
-  junitVersion = '5.10.0'
+    junitVersion = '5.10.0'
 }
 
 sourceCompatibility = '21'
 targetCompatibility = '21'
 
 tasks.withType(JavaCompile) {
-  options.encoding = 'UTF-8'
+    options.encoding = 'UTF-8'
 }
 
 application {
-  mainModule = 'org.foxycue.foxycue'
-  mainClass = 'org.foxycue.foxycue.Main'
+    mainModule = 'org.foxycue.foxycue'
+    mainClass = 'org.foxycue.foxycue.Main'
 }
 jar {
-  manifest {
-    attributes "Main-Class": 'org.foxycue.foxycue.Main'
-  }
+    manifest {
+        attributes "Main-Class": 'org.foxycue.foxycue.Main'
+    }
 //  from {
 //    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 //  }
 }
 javafx {
-  version = '21'
-  modules = ['javafx.controls', 'javafx.fxml']
+    version = '21'
+    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '3.0.0-beta2'
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '3.0.0-beta2'
-  runtimeOnly 'com.lmax:disruptor:4.0.0'
-  implementation('org.controlsfx:controlsfx:11.1.2')
-  implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.18.0'
-  implementation ('com.google.code.gson:gson:2.11.0')
-  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '3.0.0-beta2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '3.0.0-beta2'
+    runtimeOnly 'com.lmax:disruptor:4.0.0'
+    implementation('org.controlsfx:controlsfx:11.1.2')
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.18.0'
+    implementation('com.google.code.gson:gson:2.11.0')
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
 jlink {
-  targetPlatform("win") {
-    //jdkHome = 'C:\Users\_redfox\.jdks\openjdk-21.0.1'
-    //addExtraModulePath("/usr/lib/openjfx/win/jmods")
-  }
-  jpackage {
-    def winIcon = "${projectDir}/src/main/resources/org/foxycue/foxycue/icon.ico"
-    icon = winIcon
-    imageOptions = ['--icon', winIcon]
-    installerOptions = ['--icon', winIcon]
-    installerType = 'exe'
-  }
-  options = ['--strip-debug', '--no-header-files', '--no-man-pages']
-  launcher{
-    name = 'FoxyCue'
-    jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']
-  }
+    targetPlatform("win") {
+        //jdkHome = 'C:\Users\_redfox\.jdks\openjdk-21.0.1'
+        //addExtraModulePath("/usr/lib/openjfx/win/jmods")
+    }
+    jpackage {
+        def winIcon = "${projectDir}/src/main/resources/org/foxycue/foxycue/icon.ico"
+        icon = winIcon
+        imageOptions = ['--icon', winIcon]
+        installerOptions = ['--icon', winIcon]
+        installerType = 'exe'
+    }
+    options = ['--strip-debug', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'FoxyCue'
+        jvmArgs = ['-Dlog4j.configurationFile=./log4j2.xml']
+    }
 }
 test {
-useJUnitPlatform()}
+    useJUnitPlatform()
+}
 
 //jlink {
 //  imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
@@ -82,9 +83,9 @@ useJUnitPlatform()}
 //}
 
 jlinkZip {
-  group = 'distribution'
+    group = 'distribution'
 }
 
 java {
-  modularity.inferModulePath = true
+    modularity.inferModulePath = true
 }

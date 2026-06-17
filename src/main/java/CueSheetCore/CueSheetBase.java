@@ -10,7 +10,7 @@ public class CueSheetBase {
     private String performer;
     private String title;
     private String filename;
-    int nOfTracks;
+    private int nOfTracks;
     private List<Track> tracks;
 
 
